@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Upload
+{% endblock %}
+
+{% block body %}
+<form action="/url" method="post">
+       <input class="position_center borders" type="text" placeholder="Вставте нужную ссылку или хеш сюда" name="q">
+       <button type="submit" class="position_center borders">Тык!</button>
+    </form>
+{% endblock %}

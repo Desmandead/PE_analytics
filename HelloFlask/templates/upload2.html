@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Upload
+{% endblock %}
+
+{% block body %}
+<br/>
+<div class="alert alert-dismissible alert-info">
+  <strong>Обязательно!</strong> Для анализа LTV сделайте выгрузку заказов на нужный период из retailcrm по шаблону <strong>"Для LTV"</strong> в формате CSV </a>.
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<form action='' method="POST" enctype="multipart/form-data">
+		   <!-- <p><input type='file' name='file' multiple='' class="form-control">
+		    <input type='submit' value='upload' class="btn btn-primary">
+		    </p>-->
+		    <div class="form-group">
+			    <label for="formFile" class="form-label mt-4">Загрузите файл</label>
+			    <input class="form-control" type="file" name='file' multiple='' id="formFile" style="border: none;padding-left: 0;">
+			    
+			 </div>
+			 <div class="form-group">
+				 <input type='submit' value='Загрузить и обработать' class="btn btn-primary">
+			 </div>
+		</form>
+	</div>
+</div>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Канал продаж</th>
+        <th scope="col">LTV</th>
+        <th scope="col">Средний чек</th>
+        <th scope="col">Среднее кол-во покупок на 1 клиента</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Зал</th>
+        <td>{{ filename.zalltv }}</td>
+        <td>{{ filename.zalaov }}</td>
+        <td>{{ filename.zalatv }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Онлайн</th>
+        <td>{{ filename.onlineltv }}</td>
+        <td>{{ filename.onlineaov }}</td>
+        <td>{{ filename.onlineatv }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Опт</th>
+        <td>{{ filename.optltv }}</td>
+        <td>{{ filename.optaov }}</td>
+        <td>{{ filename.optatv }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Зал+онлайн</th>
+        <td>{{ filename.zoltv }}</td>
+        <td>{{ filename.zoaov }}</td>
+        <td>{{ filename.zoatv }}</td>
+      </tr>
+      </tbody>
+</table>
+
+{% endblock %}

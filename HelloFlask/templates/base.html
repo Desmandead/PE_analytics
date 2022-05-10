@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
+	<meta charset="utf-8">
+<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="container">	
+	<div class="bs-component">
+              <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">PE Analytics</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="/">Главная
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/upload2">LTV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/pairs">Пары товаров товаров</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/speed">Скорость продажи товаров</a>
+                      </li>
+<!--
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                      </li>
+-->
+                    </ul>
+<!--
+                    <form class="d-flex">
+                      <input class="form-control me-sm-2" type="text" placeholder="Search">
+                      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+-->
+                  </div>
+                </div>
+              </nav>
+   	{% block body %}{% endblock %}
+</div>
+</body>
+</html>
