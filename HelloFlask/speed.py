@@ -81,6 +81,7 @@ def real_speed(dir):
 	quant = dfm[['name','quantity','externalCode']]
 	quant = quant.merge(df6, how='left', on='externalCode')
 	main = main.merge(quant, how='left', on='name')
+	main['balance_by_day'] = main['quantity']/main['real_speed']
 	
 	main.to_csv(dir + '/real_speed.csv', sep=';')
 	rs = '/uploads/real_speed.csv'
